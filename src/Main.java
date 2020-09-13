@@ -15,9 +15,23 @@ public class Main {
 
 	public static void main(String args[]){
 		// Test
+		int dayOfYear=SunriseSunsetTimeDateFormat.getDayOfCurrentYear();
+		System.out.println("Day of year:"+dayOfYear);
+		
+		System.out.println("Timezone:"+SunriseSunsetTimeDateFormat.getCurrentTimezoneName());
+		System.out.println("Timezone:"+SunriseSunsetTimeDateFormat.getCurrentTimezoneOffset());
+		System.out.println("Timezone GMT +"+SunriseSunsetTimeDateFormat.getTimeZoneOffsetIn_h());
+		
+		
 		double dec=SunsetSunrise.getSunDeclinationIn_Rad(DAY_OF_YEAR);
 		System.out.println("Declination:"+SunsetSunrise.toGrad(dec));
-		System.out.println("Sunrise:"+SunsetSunrise.getSunriseTimeAtObserversLocationIn_h(LONG, LAT, DAY_OF_YEAR, TIME_ZONE));
-		System.out.println("Sunset:"+SunsetSunrise.getSunsetTimeAtObserversLocationIn_h(LONG, LAT, DAY_OF_YEAR, TIME_ZONE));
+		
+		double timeOfSunrise=SunsetSunrise.getSunriseTimeAtObserversLocationIn_h(LONG, LAT, dayOfYear, TIME_ZONE);
+		System.out.println("Sunrise:"+timeOfSunrise);
+		System.out.println("Sunrise:"+SunriseSunsetTimeDateFormat.getTimeInTwentyFourHourFormat(timeOfSunrise));
+		
+		double timeOfSunset=SunsetSunrise.getSunsetTimeAtObserversLocationIn_h(LONG, LAT, dayOfYear, TIME_ZONE);
+		System.out.println("Sunrise:"+timeOfSunset);
+		System.out.println("Sunset:"+SunriseSunsetTimeDateFormat.getTimeInTwentyFourHourFormat(timeOfSunset));
 	}
 }
