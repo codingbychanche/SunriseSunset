@@ -32,14 +32,7 @@ public class SunriseSunsetTimeDateFormat {
 	 */
 	public static int getDayOfCurrentYear(){
 		Calendar cal=Calendar.getInstance();
-	
-		int dayOfMonth=cal.get(Calendar.DAY_OF_MONTH);
-		
-		// January=0, december=11
-		int month=cal.get(Calendar.MONTH)+1;
-		
-		return month*30+dayOfMonth;
-	
+		return cal.get(Calendar.DAY_OF_YEAR);
 	}
 	
 	/**
