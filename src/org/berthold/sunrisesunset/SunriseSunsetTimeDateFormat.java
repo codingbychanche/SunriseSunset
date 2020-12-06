@@ -1,28 +1,29 @@
 package org.berthold.sunrisesunset;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
+
 /**
  * A collection of utilities for formating time and date.
  * 
  * @author Berthold
  *
  */
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
-
 public class SunriseSunsetTimeDateFormat {
 
 	/**
 	 * Hours and minutes.
 	 * 
-	 * @param timeIn_h
+	 * @param A double precision value representing the time in hours and minutes.
 	 * @return A String containing the hours and minutes from a double
-	 * precission value prividing the time in decimal format.
+	 * precission value providing the time in decimal format.
 	 */
 	public static String getTimeInTwentyFourHourFormat(double timeIn_h) {
 		int hours = (int) timeIn_h;
 		int minutes = (int) (timeIn_h % 1 * 60);
 
-		return hours + ":" + minutes;
+		return String.format("%02d",hours) + ":" + String.format("%02d",minutes);
 	}
 	
 	/**

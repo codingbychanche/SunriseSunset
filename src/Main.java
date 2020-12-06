@@ -33,5 +33,7 @@ public class Main {
 		double timeOfSunset=SunsetSunrise.getSunsetTimeAtObserversLocationIn_h(LONG, LAT, dayOfYear, TIME_ZONE);
 		System.out.println("Sunrise:"+timeOfSunset);
 		System.out.println("Sunset:"+SunriseSunsetTimeDateFormat.getTimeInTwentyFourHourFormat(timeOfSunset));
+		
+		System.out.println(SunriseSunsetTimeDateFormat.getTimeInTwentyFourHourFormat(16.0046991399000));
 	}
 }
