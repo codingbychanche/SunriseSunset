@@ -34,6 +34,5 @@ public class Main {
 		System.out.println("Sunrise:"+timeOfSunset);
 		System.out.println("Sunset:"+SunriseSunsetTimeDateFormat.getTimeInTwentyFourHourFormat(timeOfSunset));
 		
-		System.out.println(SunriseSunsetTimeDateFormat.getTimeInTwentyFourHourFormat(16.0046991399000));
 	}
 }
